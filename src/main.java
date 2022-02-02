@@ -5,6 +5,6 @@ public class main {
         //new exo1();
         //new exo2("alexis charly miam");
         //new exo3('m', 'b');
-        new exo4("test", "abcde");
+        new exo4("caca", "bbbb");
     }
 }

@@ -1,15 +1,21 @@
 public class exo4 {
     public exo4(String text, String clef) {
 
+        String finalText = "";
+
         text.replaceAll(" ", "");
         clef.replaceAll(" ", "");
 
+        char[] a = text.toCharArray();
+        char[] b = clef.toCharArray();
+
         if (text.length() == clef.length()) {
 
-            for (String i : text){
-
+            for (int i = 0; i < a.length; i++){
+                finalText += convertLetter(a[i],b[i]);
             }
         }
+        System.out.println(finalText);
     }
 
     public String convertLetter(char a, char b) {
