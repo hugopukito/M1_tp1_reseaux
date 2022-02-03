@@ -1,10 +1,13 @@
+import java.util.Arrays;
+
 public class exo2 {
-    String text = "";
 
-    public exo2(String text) {
-        this.text = text;
+    static String f(String text) {
+        text = text.toLowerCase();
+        for (String s : Arrays.asList("[^a-z]", " ")) {
+            text = text.replaceAll(s, "");
+        }
 
-        System.out.println(text.replaceAll(" ", ""));
-
+        return text;
     }
 }

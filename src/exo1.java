@@ -1,13 +1,18 @@
 import java.util.Scanner;
 
 public class exo1 {
-    String text = "";
-
-    public exo1() {
-        this.text = text;
+    static String f(boolean a) {
+        String text = "";
         Scanner sc = new Scanner(System.in);
-        System.out.println("saisir du texte");
+        if (a){
+            System.out.println("saisir le texte: ");
+        }
+        else{
+            System.out.println("saisir la clef: ");
+        }
+
         text = sc.nextLine();
-        System.out.println(text);
+
+        return text;
     }
 }

@@ -1,32 +1,22 @@
+import java.util.Arrays;
+
 public class exo4 {
-    public exo4(String text, String clef) {
+    static void f(String text, String clef) {
 
         String finalText = "";
 
-        text.replaceAll(" ", "");
-        clef.replaceAll(" ", "");
+        text = exo2.f(text);
+        clef = exo2.f(clef);
 
         char[] a = text.toCharArray();
         char[] b = clef.toCharArray();
 
-        if (text.length() == clef.length()) {
-
-            for (int i = 0; i < a.length; i++){
-                finalText += convertLetter(a[i],b[i]);
-            }
+        for (int i = 0; i < a.length; i++){
+            finalText += exo3.f(a[i],b[i%(b.length)]);
         }
-        System.out.println(finalText);
-    }
 
-    public String convertLetter(char a, char b) {
-        // a 97 et z 122
-
-        int x = a - 97;
-        int y = b - 97;
-
-        x = (x + y) % 26;
-
-        char c = (char) ((char) (x + 97));
-        return String.valueOf(c);
+        System.out.println("texte: " + text);
+        System.out.println("clef: " + clef);
+        System.out.println("texte chiffré: " + finalText);
     }
 }

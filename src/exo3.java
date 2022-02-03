@@ -1,6 +1,5 @@
 public class exo3 {
-    public exo3(char a, char b) {
-        // a 97 et z 122
+    static char f(char a, char b) {
 
         int x = a - 97;
         int y = b - 97;
@@ -8,6 +7,7 @@ public class exo3 {
         x = (x + y) % 26;
 
         char c = (char) ((char) (x + 97));
-        System.out.println(c);
+
+        return c;
     }
 }
