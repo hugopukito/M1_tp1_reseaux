@@ -4,6 +4,6 @@ public class exo5 {
         String text = exo1.f(true);
         String clef = exo1.f(false);
 
-        exo4.f(text, clef);
+        exo4.f2(text, clef);
     }
 }
