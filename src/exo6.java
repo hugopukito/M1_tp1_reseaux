@@ -2,8 +2,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class exo6 {
-    public static void f(){
-        String s = "abcdefghijklmnopqrstuvwxyzabcdmnoabc";
+    public static Map<String,Integer> f(String s){
+
         char[] c = s.toCharArray();
 
         Map<String,Integer> comb = new HashMap<>();
@@ -28,11 +28,8 @@ public class exo6 {
                 }
             }
         }
-
-        for (Map.Entry entry : comb.entrySet())
-        {
-            System.out.println(entry.getKey() + " trouvé " + entry.getValue() + " fois");
-        }
+        //print(comb);
+        return comb;
     }
 
     private static int count (String str, String findStr) {
@@ -56,5 +53,12 @@ public class exo6 {
             return true;
         }
         return false;
+    }
+
+    private static void print (Map<String,Integer> comb) {
+        for (Map.Entry entry : comb.entrySet())
+        {
+            System.out.println(entry.getKey() + " trouvé " + entry.getValue() + " fois");
+        }
     }
 }
