@@ -53,13 +53,38 @@ public class exo7 {
         return false;
     }
 
-    private static ArrayList<Integer> diviseurs (Map<String, ArrayList<Integer>> distance) {
-        ArrayList<Integer> diviseurMap = null;
+    private static int diviseurs (Map<String, ArrayList<Integer>> distance) {
+        ArrayList<Integer> diviseurMap = new ArrayList<>();
+        Map<Integer, ArrayList<Integer>> map = new HashMap<>();
+        int n = 0;
 
         for (Map.Entry m : distance.entrySet()) {
-            System.out.println(m.getValue());
+            for (int e : (ArrayList<Integer>) m.getValue()) {
+                map.put(e, diviseurMap);
+            }
         }
 
-        return diviseurMap;
+        for (Integer key : map.keySet()) {
+            diviseurMap = new ArrayList<>();
+            n = key;
+            for (int i=1; i < n/2; i++) {
+                if (n % i == 0) {
+                    diviseurMap.add(i);
+                    map.put(key, diviseurMap);
+                }
+            }
+        }
+
+        /*for (Map.Entry m : map.entrySet()) {
+            System.out.println(m.getKey() + " divisible par " + m.getValue());
+        }*/
+
+        for (Map.Entry m : map.entrySet()) {
+            for (int e : (ArrayList<Integer>) m.getValue()) {
+                System.out.println(e);
+            }
+        }
+
+        return 0;
     }
 }
