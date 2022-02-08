@@ -26,21 +26,30 @@ public class exo7 {
 
             lastIndex = str.indexOf(findStr, lastIndex);
 
-
             if (cpt >= 1 && lastIndex != -1) {
                 dist = lastIndex - dist;
                 buffer.add(dist);
                 distanceMap.put(findStr,buffer);
             }
-            else {
-                dist = lastIndex;
-            }
+
+            dist = lastIndex;
 
             if (lastIndex != -1) {
                 cpt++;
                 lastIndex += findStr.length();
             }
         }
+
+        /*while (lastIndex != -1) {
+
+            lastIndex = str.indexOf(findStr, lastIndex);
+
+            if (lastIndex != -1) {
+                cpt++;
+                lastIndex += findStr.length();
+            }
+        }*/
+
         return distanceMap;
     }
 
@@ -86,8 +95,9 @@ public class exo7 {
         }
 
         var tempMax = maxEntry.getValue();
+        var sizeTempMax = tempMax.size();
 
-        for (Integer i : tempMax) {
+        for (int i=0; i<sizeTempMax; i++) {
             for (Map.Entry m : map.entrySet()) {
                 var temp = (ArrayList<Integer>) m.getValue();
                 tempMax.retainAll(temp);

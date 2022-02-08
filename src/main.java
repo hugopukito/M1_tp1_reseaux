@@ -13,10 +13,13 @@ public class main {
                 "ebfelxyvlwnojnsiofrwucceswkvidgmucgocruwgnmaaffvnsiudekqhceucpfcmpvsudgav" +
                 "emnymamvlfmaoyfntqcuafvfjnxklneiwcwodcculwriftwgmuswovmatnybuhtcocwfytnmgyt" +
                 "qmkbbnlgfbtwojftwgntejkneedcldhwtvbuvgfbijg";
+
         s = exo2.f(s);
 
-        System.out.println(s);
-
         exo7.f(exo6.f(s), s);
+
+         var s2 = "ekqhuiduxfpguytsmtffshnuoczgmruweytrgkmeedctvrecfbdjqcuswvbpnlgoylskmtefvjjtwwmfmwpnmemtmhrspxfsskffstnuoczgmdoeoyeekcpjrgpmurskhfrseiuevgoycwxizaygosaanydoeoyjlwunhamebfelxyvlwnojnsiofrwucceswkvidgmucgocruwgnmaaffvnsiud";
+
+        System.out.println(s2.length());
     }
 }
