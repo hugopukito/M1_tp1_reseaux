@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class exo7 {
     public static void f(Map<String, Integer> comb, String s) {
@@ -10,11 +8,11 @@ public class exo7 {
 
         for (String key : comb.keySet()) {
             var temp = distances(s, key);
-            //System.out.println(distances(s, key));
+            System.out.println(distances(s, key));
             dists.put(key, temp.get(key));
         }
 
-        diviseurs(dists);
+        System.out.println(diviseurs(dists));
     }
 
     private static Map<String, ArrayList<Integer>> distances (String str, String findStr) {
@@ -56,6 +54,8 @@ public class exo7 {
     private static int diviseurs (Map<String, ArrayList<Integer>> distance) {
         ArrayList<Integer> diviseurMap = new ArrayList<>();
         Map<Integer, ArrayList<Integer>> map = new HashMap<>();
+        Map.Entry<Integer, ArrayList<Integer>> maxEntry = null;
+        int maxSize = 0;
         int n = 0;
 
         for (Map.Entry m : distance.entrySet()) {
@@ -75,14 +75,27 @@ public class exo7 {
             }
         }
 
-        /*for (Map.Entry m : map.entrySet()) {
-            System.out.println(m.getKey() + " divisible par " + m.getValue());
-        }*/
-
         for (Map.Entry m : map.entrySet()) {
-            for (int e : (ArrayList<Integer>) m.getValue()) {
-                System.out.println(e);
+            System.out.println(m.getKey() + " divisible par " + m.getValue());
+            var k = ((ArrayList<Integer>) m.getValue()).size();
+            if (maxSize == 0 || k > maxSize)
+            {
+                maxSize = k;
+                maxEntry = m;
             }
+        }
+
+        var tempMax = maxEntry.getValue();
+
+        for (Integer i : tempMax) {
+            for (Map.Entry m : map.entrySet()) {
+                var temp = (ArrayList<Integer>) m.getValue();
+                tempMax.retainAll(temp);
+            }
+        }
+
+        for (Integer i : tempMax) {
+            System.out.println(i);
         }
 
         return 0;
