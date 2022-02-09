@@ -40,16 +40,6 @@ public class exo7 {
             }
         }
 
-        /*while (lastIndex != -1) {
-
-            lastIndex = str.indexOf(findStr, lastIndex);
-
-            if (lastIndex != -1) {
-                cpt++;
-                lastIndex += findStr.length();
-            }
-        }*/
-
         return distanceMap;
     }
 
@@ -60,7 +50,7 @@ public class exo7 {
         return false;
     }
 
-    private static int diviseurs (Map<String, ArrayList<Integer>> distance) {
+    private static ArrayList<Integer> diviseurs (Map<String, ArrayList<Integer>> distance) {
         ArrayList<Integer> diviseurMap = new ArrayList<>();
         Map<Integer, ArrayList<Integer>> map = new HashMap<>();
         Map.Entry<Integer, ArrayList<Integer>> maxEntry = null;
@@ -104,10 +94,8 @@ public class exo7 {
             }
         }
 
-        for (Integer i : tempMax) {
-            System.out.println(i);
-        }
+        tempMax.remove(new Integer(1));
 
-        return 0;
+        return tempMax;
     }
 }
