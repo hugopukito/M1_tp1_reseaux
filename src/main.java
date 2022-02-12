@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
 
-        /*String s = "abcdefghijklmnopqrstuvwxyzabcdmnoabc";
-
         String s = "kqowefvjpujuunukglmekjinmwuxfqmkjbgwrlfnfghudwuumbsvlpsncmuekqc" +
                 "teswreekoyssiwctuaxyotapxplwpntcgojbgfqhtdwxizaygffnsxcs" +
                 "eynctsspntujnytggwzgrwuunejuuqeapymekqhuiduxfpguytsmtffshnuocz" +
@@ -14,12 +12,12 @@ public class main {
                 "emnymamvlfmaoyfntqcuafvfjnxklneiwcwodcculwriftwgmuswovmatnybuhtcocwfytnmgyt" +
                 "qmkbbnlgfbtwojftwgntejkneedcldhwtvbuvgfbijg";
 
-        s = exo2.f(s);
+        /*exo7.f(exo6.f(s), s);*/
 
-        exo7.f(exo6.f(s), s);*/
+        /*String s = "PERTQUDCDJXESCWMPNLVMIQDIZTQFVXAKLRPICCPQSHZYDNCPWEAJWSZGCLMQNRDEOHCGEZTQZYHELEWAUQFROICWHQMYRRUFGBYQSEPVNEQCSEEQWEEAGDSZDCWEOHYDWQERLMFTCCQUNCPPQSKPYFEQOIOHGPREERWIEFSDMXSYGEUELEHUSNLVGPMFVEIVXSUSJPWHIEYSNLCDWMCRTZMICYXMNMFZQASLZQCJPYDSTTKZEPZRECMYWOICYGUESIUGIRCEUTYTIZTJPWHIEYIETYYHUSOFIXESCWHOGDMZSNLVQSQPYJSCAVQSQLMQNRLPQSRLMXLCCGAMKPGQLYLYDAGEHGERCIRAGEIZNMGIYBPP";
 
-        String s = "PERTQUDCDJXESCWMPNLVMIQDIZTQFVXAKLRPICCPQSHZYDNCPWEAJWSZGCLMQNRDEOHCGEZTQZYHELEWAUQFROICWHQMYRRUFGBYQSEPVNEQCSEEQWEEAGDSZDCWEOHYDWQERLMFTCCQUNCPPQSKPYFEQOIOHGPREERWIEFSDMXSYGEUELEHUSNLVGPMFVEIVXSUSJPWHIEYSNLCDWMCRTZMICYXMNMFZQASLZQCJPYDSTTKZEPZRECMYWOICYGUESIUGIRCEUTYTIZTJPWHIEYIETYYHUSOFIXESCWHOGDMZSNLVQSQPYJSCAVQSQLMQNRLPQSRLMXLCCGAMKPGQLYLYDAGEHGERCIRAGEIZNMGIYBPP";
+        System.out.println(exo12.f(exo11.f(s)));*/
 
-        System.out.println(exo12.f(exo11.f(s)));
+        exo14.f(s, exo7.f(exo6.f(s), s));
     }
 }

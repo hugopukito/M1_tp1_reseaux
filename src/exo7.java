@@ -1,18 +1,21 @@
 import java.util.*;
 
 public class exo7 {
-    public static void f(Map<String, Integer> comb, String s) {
+    public static int f(Map<String, Integer> comb, String s) {
 
         char[] c = s.toCharArray();
         Map<String, ArrayList<Integer>> dists = new HashMap<>();
 
         for (String key : comb.keySet()) {
             var temp = distances(s, key);
-            System.out.println(distances(s, key));
+            //System.out.println(distances(s, key));
             dists.put(key, temp.get(key));
         }
 
-        System.out.println(diviseurs(dists));
+        int longueur = diviseurs(dists);
+        //System.out.println("longueur clef trouvée: " + longueur);
+
+        return longueur;
     }
 
     private static Map<String, ArrayList<Integer>> distances (String str, String findStr) {
@@ -50,7 +53,7 @@ public class exo7 {
         return false;
     }
 
-    private static ArrayList<Integer> diviseurs (Map<String, ArrayList<Integer>> distance) {
+    private static int diviseurs (Map<String, ArrayList<Integer>> distance) {
         ArrayList<Integer> diviseurMap = new ArrayList<>();
         Map<Integer, ArrayList<Integer>> map = new HashMap<>();
         Map.Entry<Integer, ArrayList<Integer>> maxEntry = null;
@@ -75,7 +78,7 @@ public class exo7 {
         }
 
         for (Map.Entry m : map.entrySet()) {
-            System.out.println(m.getKey() + " divisible par " + m.getValue());
+            //System.out.println(m.getKey() + " divisible par " + m.getValue());
             var k = ((ArrayList<Integer>) m.getValue()).size();
             if (maxSize == 0 || k > maxSize)
             {
@@ -96,6 +99,6 @@ public class exo7 {
 
         tempMax.remove(new Integer(1));
 
-        return tempMax;
+        return tempMax.get(0);
     }
 }
