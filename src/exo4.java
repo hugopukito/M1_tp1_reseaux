@@ -17,9 +17,9 @@ public class exo4 {
             finalText += exo3.f(a[i],b[i%(b.length)]);
         }
 
-        System.out.println("texte: " + text);
+        /*System.out.println("texte: " + text);
         System.out.println("clef: " + clef);
-        System.out.println("texte chiffré: " + finalText);
+        System.out.println("texte chiffré: " + finalText);*/
 
         return finalText;
     }
@@ -39,9 +39,9 @@ public class exo4 {
             finalText += exo3.f2(a[i],b[i%(b.length)]);
         }
 
-        System.out.println("texte chiffré: " + text);
+        /*System.out.println("texte chiffré: " + text);
         System.out.println("clef: " + clef);
-        System.out.println("texte déchiffré: " + finalText);
+        System.out.println("texte déchiffré: " + finalText);*/
 
         return finalText;
     }
