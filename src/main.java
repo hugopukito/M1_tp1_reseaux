@@ -18,6 +18,6 @@ public class main {
 
         System.out.println(exo12.f(exo11.f(s)));*/
 
-        exo14.f(s, exo7.f(exo6.f(s), s));
+        /*exo14.f(s, exo7.f(exo6.f(s), s));*/
     }
 }

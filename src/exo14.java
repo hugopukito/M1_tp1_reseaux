@@ -1,25 +1,63 @@
 public class exo14 {
 
-    static float[] alphabet = {
-            9.42F, 1.02F, 2.64F, 3.39F, 15.87F, 0.95F, 1.04F, 0.77F, 8.41F, 0.89F, 0.00F, 5.34F, 3.24F,
-            7.15F, 5.14F, 2.86F, 1.06F, 6.46F, 7.90F, 7.26F, 6.24F, 2.15F, 0.00F, 0.30F, 0.24F, 0.32F
-    };
-
     public static String f(String s, int longueur) {
 
+        String temp = "";
+        String clef = "";
         char[] c = s.toCharArray();
+        char[] f = new char[26];
+
+        for(int i=0; i<26; i++) {
+            f[i] = (char) ((char) i + 97);
+        }
 
         for (int i=1; i <= longueur; i++) {
             for (int j=i-1; j < c.length; j+=longueur) {
-                try{
-                    System.out.print(c[j]);
-                } catch (Exception e) {
-
-                }
+                    temp += c[j];
             }
-            System.out.println();
+            int[] count;
+            //System.out.println(temp);
+            count = exo11.compte(temp);
+            char max = max(count);
+            //System.out.println(max);
+            clef += shift(max);
+            //System.out.println(clef);
+
+            /*for (int k=0; k<26; k++) {
+                System.out.print(f[k] + ": ");
+                System.out.println(count[k]);
+            }*/
+
+            temp = "";
         }
 
-        return "";
+        return exo4.f2(s, clef);
+    }
+
+    private static char max (int[] count) {
+
+        int max = 0;
+        int maxIndex = 0;
+
+        for (int i=0; i<count.length; i++) {
+            if (count[i] > max) {
+                max = count[i];
+                maxIndex = i;
+            }
+        }
+
+        return (char) ((char) maxIndex + 97);
+    }
+
+    private static char shift (char c) {
+        int x = c - 97;
+
+        if (x-4 >= 0) {
+            x = (x - 4);
+        } else {
+            x = (x - 4) + 26;
+        }
+
+        return (char) ((char) (x + 97));
     }
 }

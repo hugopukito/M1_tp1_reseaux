@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class exo4 {
 
     // fonction de chiffrement
-    static void f(String text, String clef) {
+    static String f(String text, String clef) {
 
         String finalText = "";
 
@@ -20,10 +20,12 @@ public class exo4 {
         System.out.println("texte: " + text);
         System.out.println("clef: " + clef);
         System.out.println("texte chiffré: " + finalText);
+
+        return finalText;
     }
 
     // fonction de déchiffrement
-    static void f2(String text, String clef) {
+    static String f2(String text, String clef) {
 
         String finalText = "";
 
@@ -40,5 +42,7 @@ public class exo4 {
         System.out.println("texte chiffré: " + text);
         System.out.println("clef: " + clef);
         System.out.println("texte déchiffré: " + finalText);
+
+        return finalText;
     }
 }

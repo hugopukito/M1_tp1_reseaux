@@ -18,7 +18,7 @@ public class exo11 {
         return coincidence(text);
     }
 
-    private static int[] compte(String ligne) {
+    public static int[] compte(String ligne) {
         int[] occ = new int[26];
 
         for (int i = 0; i < ligne.length(); i++)
